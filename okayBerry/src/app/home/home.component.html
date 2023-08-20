@@ -1,0 +1,20 @@
+<div text-align="center" >
+        <h2>Home page</h2>
+        <h3>{{message}}</h3>
+        <div *ngIf="!loggedin">
+            <button routerLink="/login">Login</button>
+            <button *ngIf='crewman' routerLink="/signup">Register</button>
+        </div>
+        <div *ngIf="loggedin">
+            <button routerLink="/profile">Profile</button>
+        </div>
+        <div>
+            <button *ngIf='crewman' routerLink="/newcrew">Create Crew</button>
+            <button (click)="show=true">Open Crew</button>
+        </div>
+        <div *ngIf="show">
+            <input type="text" #crewname />
+            
+            <button (click)="checkcrewname(crewname.value)">Open</button>
+        </div>
+</div>

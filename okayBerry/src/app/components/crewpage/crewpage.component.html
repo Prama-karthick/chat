@@ -1,0 +1,29 @@
+<div *ngIf="showerror">
+    {{errormessage}}
+</div>
+<div>
+    <h3 text-align="center">{{welcome}}</h3>
+    <hr>
+    <h2 font-style="italic"  >{{Cname}}</h2>
+    <hr>
+    <div *ngFor="let message of chats">
+        {{message}}
+        <hr>
+    </div>
+
+    <div>
+        <h3 (click)="reloadmessages()">@reload</h3>
+        <!-- <app-profile></app-profile> -->
+        <input algin="bottom" #newmessage style=width:400px aria-placeholder="type a message..."/><button (click)="sendmessage(newmessage.value)">Send</button>
+    </div>
+</div>
+<div *ngFor="let member of crewmembers">
+    <table>
+        <tr>
+            <td>{{member.name}}</td>
+            <td>{{member.mail}}</td>
+
+        </tr>   
+
+    </table>   
+</div>

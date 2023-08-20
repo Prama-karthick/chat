@@ -1,0 +1,26 @@
+<h4 *ngIf="invalid">username or password is invalid</h4>
+<form  [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div >
+      <label>Email:</label>
+      <div>
+        <input  type="email" placeholder="abc@xyz.com" formControlName="email" />
+      </div>
+      <div  *ngIf="fc['email'].errors && isSubmitted">
+        <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
+        <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
+      </div>
+    </div>
+    <div >
+      <label>Password:</label>
+      <div>
+        <input  type="password" placeholder="Enter password" formControlName="password" />
+      </div>
+      <div  *ngIf="fc['password'].errors && isSubmitted">
+        <div *ngIf="fc['password'].errors['required']">Should not be empty</div>
+      </div>
+    </div>
+      <button type="submit">Login</button>
+    <div >
+          <!-- <p>If not registered? <a routerLink="/register">Signup!</a></p> -->
+    </div>
+</form>

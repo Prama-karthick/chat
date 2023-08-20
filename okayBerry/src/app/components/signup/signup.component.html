@@ -1,0 +1,48 @@
+<h4 *ngIf="invalid">{{message}}</h4>
+<form  [formGroup]="registerForm" (ngSubmit)="submit()">
+    <div >
+      <label>Name:</label>
+      <div>
+        <input  type="string" formControlName="name" />
+      </div>
+      <div  *ngIf="fc['name'].errors && isSubmitted">
+        <div *ngIf="fc['name'].errors['required']">Should not be empty</div>
+      </div>
+      <label>Email:</label>
+      <div>
+        <input  type="email" placeholder="abc@xyz.com" formControlName="email" />
+      </div>
+      <div  *ngIf="fc['email'].errors && isSubmitted">
+        <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
+        <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
+      </div>
+    </div>
+    <div >
+      <label>Password:</label>
+      <div>
+        <input  type="password" placeholder="Enter password" formControlName="password" />
+      </div>
+      <div  *ngIf="fc['password'].errors && isSubmitted">
+        <div *ngIf="fc['password'].errors['required']">Should not be empty</div>
+      </div>
+    </div>
+    <label>Contact Number:</label>
+      <div>
+        <input  type="number" formControlName="phone_number" />
+      </div>
+      <div  *ngIf="fc['phone_number'].errors && isSubmitted">
+        <div *ngIf="fc['phone_number'].errors['required']">Should not be empty</div>
+      </div>
+      <label>Gender:</label>
+      <select formControlName="gender">
+        <option value="" disabled selected hidden>Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Others">Others</option>
+      </select>
+      <div  *ngIf="fc['gender'].errors && isSubmitted">
+        <div *ngIf="fc['gender'].errors['required']">Should not be empty</div>
+      </div>
+      <br>
+      <button type="submit">Register</button>
+</form>

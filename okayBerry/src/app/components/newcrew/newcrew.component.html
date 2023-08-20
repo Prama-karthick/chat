@@ -1,0 +1,60 @@
+<div>
+    <div *ngIf="show" >
+        <div *ngFor="let i of cname">
+        {{i.name}} &nbsp; {{i.mail}}
+    </div>
+   {{message}}
+
+    </div>
+    <form [formGroup]="newCrewForm" (ngSubmit)="submit()">
+        <label>Crew Name:</label>
+        <input id="crewname" type="text" placeholder="cReW nAmE" formControlName="crewname"/>
+        <ng-container formArrayName="Members">
+            <!-- <div [formGroupName]="0">
+                Member 1
+                <div>
+                    
+                    <input id="name"  formControlName="name" type="text" placeholder="Name"/>
+                </div>
+                <div>
+                    
+                    <input id="name"  formControlName="mail" type="text" placeholder="mailid"/>
+                </div>
+                
+            </div>
+            <div [formGroupName]="1">
+                Member 2
+                <div>
+                    
+                    <input id="name"  formControlName="name" type="text" placeholder="Name"/>
+                </div>
+                <div>
+                    
+                    <input id="name"  formControlName="mail" type="text" placeholder="mailid"/>
+                </div>
+                
+            </div> -->
+            <ng-container *ngFor="let member of Members; let i = index">
+                <br><br>
+                <div [formGroupName]="i">
+                    Member {{i+1}}
+                    <div>
+                        
+                        <input id="name"  formControlName="name" type="text" placeholder="Name"/>
+                    </div>
+                    <div>
+                        
+                        <input id="mail"  formControlName="mail" type="text" placeholder="mailid"/>
+                    </div>
+                    
+                </div>
+            </ng-container>
+        </ng-container><br>
+        <button (click)="addmember()" type="button" *ngIf="limitNotReached" >
+            + add members
+        </button><br>
+        <button type="submit">Create</button>
+    </form>
+
+    
+</div>
