@@ -25,11 +25,13 @@ app.get('/',(req,res) => {
   res.send("start world");
 })
 
+var global="https://okayberry.onrender.com/"
+var local="http://localhost:4200/"
 
 
 app.use(cors({
     credentials:true,
-    origin:["http://localhost:4200"]
+    origin:[global]
   }));
 
 

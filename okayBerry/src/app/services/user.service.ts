@@ -14,8 +14,8 @@ export class UserService {
  
   constructor(private http:HttpClient) {  }
   localurl="http://localhost:3000/api"
-  globalurl="";
-  url=this.localurl;
+  globalurl="https://okayberry.onrender.com/api";
+  url=this.globalurl;
   
   login(userLogin:Userinterface):Observable<any>{
      this.user=userLogin;
