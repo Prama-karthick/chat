@@ -13,23 +13,25 @@ export class UserService {
   user:any;
  
   constructor(private http:HttpClient) {  }
-
+  localurl="http://localhost:3000/api"
+  globalurl="";
+  url=this.localurl;
   
   login(userLogin:Userinterface):Observable<any>{
      this.user=userLogin;
-    return this.http.post<any>("http://localhost:3000/api/users/login", userLogin)
+    return this.http.post<any>(this.url+"/users/login", userLogin)
     
 }
 
 register(newuser:NewuserI):Observable<any>{
   this.user=newuser;
-  return this.http.post<any>("http://localhost:3000/api/users/register", newuser)
+  return this.http.post<any>(this.url+"/users/register", newuser)
   
 } 
 
 viewfriends(usermail:any):Observable<any>{
 
- return this.http.post<any>("http://localhost:3000/api/users/viewfriends", usermail)
+ return this.http.post<any>(this.url+"/users/viewfriends", usermail)
  
 }
 
