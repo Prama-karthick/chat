@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon main.ts",
-    "build": "npm install && tsc"
+    "build": "npm install"
   },
   "author": "Prama@Karthick",
   "license": "ISC",
