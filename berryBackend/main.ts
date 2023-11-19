@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
-import { dbConnect } from './berryBackend/dbconfig';
+import { dbConnect } from './dbconfig';
 import cors from 'cors';
 import { UserModel } from './models/userModel'
 import { Router } from "express";
