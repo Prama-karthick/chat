@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
-import { dbConnect } from '../berryBackend/dbconfig';
+import { dbConnect } from './dbconfig';
 import cors from 'cors';
 import { UserModel } from './models/userModel'
 import { Router } from "express";
@@ -21,9 +21,9 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/',(req,res) => {
-  res.send("start world");
-})
+// app.get('/',(req,res) => {
+//   res.send("start world");
+// })
 
 var global="https://okayberry.onrender.com/"
 var local="http://localhost:4200/"
@@ -43,7 +43,7 @@ app.listen(port,()=>{
 app.use("/api/users",userrouter);
 app.use("/api/crew",crewrouter);
 
-// app.use(express.static('public'));
-// app.get("*",(req,res)=>{
-//   res.sendFile(path.join(__dirname ,'public','index.html'))
-// })
+app.use(express.static('public'));
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname ,'public','index.html'))
+})
