@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var dotenv_1 = __importDefault(require("dotenv"));
-var dbconfig_1 = require("../berryBackend/dbconfig");
+var dbconfig_1 = require("./dbconfig");
 var cors_1 = __importDefault(require("cors"));
 var express_2 = require("express");
 var userrouter_1 = __importDefault(require("./routers/userrouter"));
