@@ -6,7 +6,7 @@
     },
     "scripts":{
       "start": "cd berryBackend/built && node main.js",
-      "prebuild":"cd berryBackend && npm run build",
-      "build":"cd okayBerry && npm run build"
+      "prebuild":"cd berryBackend && yarn run build",
+      "build":"cd okayBerry && yarn run build"
     } 
   }

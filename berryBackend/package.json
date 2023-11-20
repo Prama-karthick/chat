@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon main.ts",
-    "build": "npm install"
+    "build": "yarn install"
   },
   "author": "Prama@Karthick",
   "license": "ISC",
