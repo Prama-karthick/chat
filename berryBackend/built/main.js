@@ -36,5 +36,5 @@ app.use("/api/users", userrouter_1.default);
 app.use("/api/crew", crewrouter_1.default);
 app.use(express_1.default.static('public'));
 app.get("*", function (req, res) {
-    res.sendFile(path_1.default.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path_1.default.join(__dirname,'../' ,'public', 'index.html'));
 });
